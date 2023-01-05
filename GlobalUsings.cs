@@ -1,0 +1,12 @@
+﻿global using FGProto.Scenes;
+global using FGProto.Scenes.SceneManagement;
+global using Chroma;
+global using Chroma.Commander;
+global using Chroma.Graphics;
+global using Chroma.Input;
+global using Chroma.Input.GameControllers;
+global using Chroma.Diagnostics.Logging;
+global using System;
+global using System.Numerics;
+global using System.Drawing;
+global using System.Collections.Generic;
