@@ -21,6 +21,16 @@ public class GameScene : Scene
 
     private List<String> punchMoveNames = new() {"623P", "236P", "6P"};
 
+    private Dictionary<Vector2, String> directionMap = new()
+    {
+        {new Vector2(0,0), "5"},
+        {new(1,0), "6"},
+        {new(-1,0), "4"},
+        {new(0,1), "2"},
+        {new(0, -1), "8"},
+        {new(1,1), "3"}
+    };
+
     public GameScene()
     {
         //testSprite = GameCore.ContentProvider?.Load<Texture>("fg-test-sprite1.png");
@@ -34,7 +44,7 @@ public class GameScene : Scene
     public override void Draw(RenderContext context)
     {
         context.Clear(Color.White);
-        context.DrawTexture(testSprite, new(100, 100));
+        //context.DrawTexture(testSprite, new(100, 100));
         drawStickDisplay(context);
     }
 
@@ -72,10 +82,23 @@ public class GameScene : Scene
             Vector2[] recentInputFrames = new Vector2[16];
             bool validInput = false;
             int index = 0;
+
+            String lastDirName = "";
+            String inputBuffer = "";
+            String currentDirName;
             for (int i = 0; i < 16; i++)
             {
                 //GameCore.Log.Info(InputBuffer[^(i+1)]);
+                currentDirName = directionMap[InputBuffer[^(i+1)]];
+
+                if (currentDirName == lastDirName) continue;
+
+                inputBuffer += currentDirName;
+                lastDirName = currentDirName;
             }
+            
+            GameCore.Log.Info(inputBuffer);
+            
             foreach(Vector2[] moveInput in punchMoves)
             {
                 int nextExpectedInputIndex = 0;
