@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGProto", "FGProto.csproj", "{E9DEA673-12EF-4FEE-95E1-D44C1B25FF5B}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FGProto", "FGProto/FGProto.csproj", "{E9DEA673-12EF-4FEE-95E1-D44C1B25FF5B}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
